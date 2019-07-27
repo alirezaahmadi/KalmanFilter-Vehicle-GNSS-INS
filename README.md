@@ -93,7 +93,7 @@ where n is the total number of time steps we set for the inputs
 * The runtime of each of the later steps remains bounded
 * Its Possible for the inputs and outputs to be processed simultaneously
 
-### Extended Kalman filter
+# Extended Kalman filter
 
 * Relax the condition on the linearity of the motion model and the
 sensor model
@@ -108,5 +108,11 @@ the update of the covariance matrixes
 ## PipeLine
 
 <div align="center">
-	<img src="/images/ExtendedKF.png" alt="ExtendedKF" width="600" title="nlos"/>
+	<img src="/images/ExtendedKF.png" alt="ExtendedKF" width="600" title="ExtendedKF"/>
+</div>
+
+# Simplified 2D motion model
+
+<div align="center">
+	<img src="/images/motion.png"  width="600"/>
 </div>
