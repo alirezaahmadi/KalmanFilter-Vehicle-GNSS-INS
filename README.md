@@ -151,7 +151,7 @@ Types of Measurements:
 * Angular rate measurements with the gyroscope Put these in a measurement vector z
 
 <div align="center">
-	<img src="/images/mes.png"  width="100"/>
+	<img src="/images/mes.png"  width="200"/>
 </div>
 
 ### Correction Stage
@@ -160,13 +160,13 @@ Assume the true state is known,
 the measurement and the true state are related by
 
 <div align="center">
-	<img src="/images/z.png"  width="100"/>
+	<img src="/images/z.png"  width="150"/>
 </div>
 
 As the measurement model is linear,
 
 <div align="center">
-	<img src="/images/zk.png"  width="500"/>
+	<img src="/images/zk.png"  width="300"/>
 </div>
 
 <div align="center">
