@@ -111,8 +111,115 @@ the update of the covariance matrixes
 	<img src="/images/ExtendedKF.png" alt="ExtendedKF" width="600" title="ExtendedKF"/>
 </div>
 
-# Simplified 2D motion model
+# Example: Vehicle 2D motion model
 
 <div align="center">
-	<img src="/images/motion.png"  width="600"/>
+	<img src="/images/motion.png"  width="800"/>
 </div>
+
+## Prediction Stage:
+
+<div align="center">
+	<img src="/images/predict.png"  width="800"/>
+</div>
+
+<div align="center">
+	<img src="/images/predict1.png"  width="800"/>
+</div>
+
+<div align="center">
+	<img src="/images/predict2.png"  width="800"/>
+</div>
+
+<div align="center">
+	<img src="/images/predict3.png"  width="800"/>
+</div>
+
+### Model does not match reality...
+
+* Measurements have high precisions — Low variance
+* BUT inaccurate — with large systematic bias
+* Kalman filter assigns weight to different stages based on their relative levels of precision
+* The output state will deviate significantly from the true state
+* Because we put a lot of weight on the wrong model
+
+### Measurement model
+
+Types of Measurements:
+* GPS measurements of the position
+* Non-gravitational acceleration/specific force measurements with the accelerometer
+* Angular rate measurements with the gyroscope Put these in a measurement vector z
+
+<div align="center">
+	<img src="/images/mes.png"  width="100"/>
+</div>
+
+### Correction Stage
+
+Assume the true state is known,
+the measurement and the true state are related by
+
+<div align="center">
+	<img src="/images/z.png"  width="100"/>
+</div>
+
+As the measurement model is linear,
+
+<div align="center">
+	<img src="/images/zk.png"  width="500"/>
+</div>
+
+<div align="center">
+	<img src="/images/cor.png"  width="800"/>
+</div>
+
+<div align="center">
+	<img src="/images/cor1.png"  width="800"/>
+</div>
+
+<div align="center">
+	<img src="/images/cor2.png"  width="800"/>
+</div>
+
+<div align="center">
+	<img src="/images/cor3.png"  width="800"/>
+</div>
+
+## Filter Tuning
+
+Turning process adjusts a trade-off between trusting to predictions and measurements.
+
+* This process has to be done through adjusting measurement and system noise models R and Q.
+* In most of the cases R cold be set based on sensor specifications. ( it better to assume a bit more than values in datasheets )
+* elements of Q have to set in an stochastic form ( they should be more than one ), depending on how much you think, the system model is precis or in could be affected by misalignment respect to real measurements and error sources.
+
+## Results
+
+<div align="center">
+	<img src="/images/re.png"  width="800"/>
+</div>
+
+<div align="center">
+	<img src="/images/res.png"  width="800"/>
+</div>
+
+## Comparison INS vs StrapDown
+
+* The results from the strapdown integration starts to deviate from the measurements by GPS positioning very quickly.
+* The strapdown integration was unable to track the trajectory accurately when there is a sharp turn.
+* Despite some observable deviations, the computation by Kalman filter agrees with the GPS measurements very well.
+* Manages to follow the trajectory without losing its accuracy in the event of a sharp turn.
+
+<div align="center">
+	<img src="/images/rescomp.png"  width="800"/>
+</div>
+
+## Why combine the two?
+
+- Predictions based on the motion model can be output at
+extremely small time intervals
+-However, the system error accumulates and the updated
+state loses its precision very quickly
+- Measurements does not suffer from this growth of error. However, the measurements can only be made in much larger time intervals
+ - By combining the prediction of the motion model and the
+measurements, we can have data concerning the state at a very small time interval while limiting the growth in error
