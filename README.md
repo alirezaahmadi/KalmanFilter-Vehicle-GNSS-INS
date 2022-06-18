@@ -226,4 +226,13 @@ measurements, we can have data concerning the state at a very small time interva
 
 ## Happy?
 
-<script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="vUgWEaC" data-description="I like Coffee!!" data-message="Thank you for visiting. You can now buy me a coffee!" data-color="#79D6B5" data-position="left" data-x_margin="18" data-y_margin="18"></script>
+
+---
+
+<div align="center">
+  
+[![paypal](https://pics.paypal.com/00/s/NGRhNWNlODUtMzZlOS00MjJhLTg2NDEtMzNiNzczMTZkMDU4/file.PNG)](https://www.paypal.com/donate/?hosted_button_id=23TQAZ9MSLAUU)
+
+</div>
+
+---
