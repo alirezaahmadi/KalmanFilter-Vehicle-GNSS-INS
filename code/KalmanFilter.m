@@ -3,7 +3,7 @@
 % by: Alireza Ahmadi                                     %
 % University of Bonn- MSc Robotics & Geodetic Engineering%
 % Alireza.Ahmadi@uni-bonn.de                             %
-% AhmadiAlireza.webs.com                                 %
+% Youtube: @practical_robotics                           %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clc; clear all; close all;
 %%***************definition of parameters************************
